@@ -101,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				86B93367187DDE7500C28319 /* USIFinalProject */,
-				86B93390187DDE7500C28319 /* USIFinalProjectTests */,
 				86B9335E187DDE7500C28319 /* Frameworks */,
 				86B9335D187DDE7500C28319 /* Products */,
+				86B93390187DDE7500C28319 /* USIFinalProjectTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,14 +135,12 @@
 			children = (
 				86B93370187DDE7500C28319 /* AppDelegate.h */,
 				86B93371187DDE7500C28319 /* AppDelegate.m */,
-				86B93373187DDE7500C28319 /* Main_iPhone.storyboard */,
-				86B93376187DDE7500C28319 /* Main_iPad.storyboard */,
 				86B9337C187DDE7500C28319 /* MasterViewController.h */,
 				86B9337D187DDE7500C28319 /* MasterViewController.m */,
 				86B9337F187DDE7500C28319 /* DetailViewController.h */,
 				86B93380187DDE7500C28319 /* DetailViewController.m */,
-				86B93382187DDE7500C28319 /* Images.xcassets */,
 				86B93379187DDE7500C28319 /* USIFinalProject.xcdatamodeld */,
+				86B933A4187DE1E800C28319 /* Classes */,
 				86B93368187DDE7500C28319 /* Supporting Files */,
 			);
 			path = USIFinalProject;
@@ -151,10 +149,13 @@
 		86B93368187DDE7500C28319 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86B93373187DDE7500C28319 /* Main_iPhone.storyboard */,
+				86B93376187DDE7500C28319 /* Main_iPad.storyboard */,
 				86B93369187DDE7500C28319 /* USIFinalProject-Info.plist */,
 				86B9336A187DDE7500C28319 /* InfoPlist.strings */,
 				86B9336D187DDE7500C28319 /* main.m */,
 				86B9336F187DDE7500C28319 /* USIFinalProject-Prefix.pch */,
+				86B93382187DDE7500C28319 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,6 +176,13 @@
 				86B93393187DDE7500C28319 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86B933A4187DE1E800C28319 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +506,7 @@
 				86B9339C187DDE7500C28319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86B9339D187DDE7500C28319 /* Build configuration list for PBXNativeTarget "USIFinalProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +515,7 @@
 				86B9339F187DDE7500C28319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
