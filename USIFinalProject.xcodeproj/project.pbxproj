@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449EE187DEAED00255CF4 /* MyAnnotation.m */; };
+		869449FA187E89C000255CF4 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449F9187E89C000255CF4 /* Settings.m */; };
 		86B93360187DDE7500C28319 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B9335F187DDE7500C28319 /* Foundation.framework */; };
 		86B93362187DDE7500C28319 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93361187DDE7500C28319 /* CoreGraphics.framework */; };
 		86B93364187DDE7500C28319 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93363187DDE7500C28319 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		869449ED187DEAED00255CF4 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		869449EE187DEAED00255CF4 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		869449F8187E89C000255CF4 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		869449F9187E89C000255CF4 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		86B9335C187DDE7500C28319 /* USIFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USIFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B9335F187DDE7500C28319 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86B93361187DDE7500C28319 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +110,15 @@
 				869449EE187DEAED00255CF4 /* MyAnnotation.m */,
 			);
 			name = " Annotation";
+			sourceTree = "<group>";
+		};
+		869449F1187E7DAD00255CF4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				869449F8187E89C000255CF4 /* Settings.h */,
+				869449F9187E89C000255CF4 /* Settings.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		86B93353187DDE7500C28319 = {
@@ -193,6 +205,7 @@
 		86B933A4187DE1E800C28319 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				869449F1187E7DAD00255CF4 /* Settings */,
 				869449F0187DEAF400255CF4 /*  Annotation */,
 			);
 			name = Classes;
@@ -302,6 +315,7 @@
 				86B93372187DDE7500C28319 /* AppDelegate.m in Sources */,
 				86B9337B187DDE7500C28319 /* USIFinalProject.xcdatamodeld in Sources */,
 				86B9336E187DDE7500C28319 /* main.m in Sources */,
+				869449FA187E89C000255CF4 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
