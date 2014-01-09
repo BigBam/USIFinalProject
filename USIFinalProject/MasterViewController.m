@@ -34,16 +34,20 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+// Open settings automatically if it's not set up
+/*
+    SettingsViewController *content = [[SettingsViewController alloc] init];
+
+    [self.detailViewController.navigationController pushViewController:content animated:YES];
+ */
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     Settings *preferences = [[Settings alloc] init];
     NSString *deviceID = [preferences deviceID];
-    
-    // We can also retreive other things at this time
-    
-    //...
+
     
     NSLog(@"%@",deviceID);
 }

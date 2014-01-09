@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449EE187DEAED00255CF4 /* MyAnnotation.m */; };
 		869449FA187E89C000255CF4 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449F9187E89C000255CF4 /* Settings.m */; };
+		86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A493A1187F132B00287D83 /* SettingsViewController.m */; };
+		86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A493A2187F132B00287D83 /* SettingsViewController.xib */; };
 		86B93360187DDE7500C28319 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B9335F187DDE7500C28319 /* Foundation.framework */; };
 		86B93362187DDE7500C28319 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93361187DDE7500C28319 /* CoreGraphics.framework */; };
 		86B93364187DDE7500C28319 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93363187DDE7500C28319 /* UIKit.framework */; };
@@ -47,6 +49,9 @@
 		869449EE187DEAED00255CF4 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		869449F8187E89C000255CF4 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		869449F9187E89C000255CF4 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		86A493A0187F132B00287D83 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		86A493A1187F132B00287D83 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		86A493A2187F132B00287D83 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		86B9335C187DDE7500C28319 /* USIFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USIFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B9335F187DDE7500C28319 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86B93361187DDE7500C28319 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +120,9 @@
 		869449F1187E7DAD00255CF4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				86A493A0187F132B00287D83 /* SettingsViewController.h */,
+				86A493A1187F132B00287D83 /* SettingsViewController.m */,
+				86A493A2187F132B00287D83 /* SettingsViewController.xib */,
 				869449F8187E89C000255CF4 /* Settings.h */,
 				869449F9187E89C000255CF4 /* Settings.m */,
 			);
@@ -291,6 +299,7 @@
 				86B93383187DDE7500C28319 /* Images.xcassets in Resources */,
 				86B93375187DDE7500C28319 /* Main_iPhone.storyboard in Resources */,
 				86B9336C187DDE7500C28319 /* InfoPlist.strings in Resources */,
+				86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +321,7 @@
 				86B93381187DDE7500C28319 /* DetailViewController.m in Sources */,
 				86B9337E187DDE7500C28319 /* MasterViewController.m in Sources */,
 				869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */,
+				86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */,
 				86B93372187DDE7500C28319 /* AppDelegate.m in Sources */,
 				86B9337B187DDE7500C28319 /* USIFinalProject.xcdatamodeld in Sources */,
 				86B9336E187DDE7500C28319 /* main.m in Sources */,

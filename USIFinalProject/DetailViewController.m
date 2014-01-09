@@ -78,7 +78,9 @@
     self.masterPopoverController = nil;
 }
 
-- (IBAction)spanUserLocation:(UIBarButtonItem *)sender {
-    NSLog(@"Zoom...");
+- (IBAction)openSettings:(id)sender {
+    SettingsViewController *content = [[SettingsViewController alloc] init];
+    [content.view setFrame:self.view.frame];
+    [self.navigationController pushViewController:content animated:YES];
 }
 @end

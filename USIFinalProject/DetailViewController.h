@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Settings.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, MKMapViewDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, MKMapViewDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
@@ -17,5 +18,6 @@
 
 @property (strong, nonatomic) MKMapView *map;
 
--(IBAction)spanUserLocation:(UIBarButtonItem *)sender;
+- (IBAction)openSettings:(id)sender;
+
 @end

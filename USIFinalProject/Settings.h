@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SettingsViewController.h"
 
 @interface Settings : NSObject
 - (NSUserDefaults *) userDefaults;

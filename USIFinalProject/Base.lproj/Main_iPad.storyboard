@@ -25,9 +25,9 @@
                 <viewController title="Challenger Locator Map" id="JEX-9P-axG" customClass="DetailViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Base Camp" id="shr-Ef-G6x">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="shr-Ef-G6x">
                             <connections>
-                                <action selector="spanUserLocation:" destination="JEX-9P-axG" id="xOQ-j2-NaC"/>
+                                <action selector="openSettings:" destination="JEX-9P-axG" id="zdW-PL-Gq6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
