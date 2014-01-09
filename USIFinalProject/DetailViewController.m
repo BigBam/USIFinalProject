@@ -54,17 +54,7 @@
     [self configureView];
 }
 
--(void) viewWillAppear:(BOOL)animated
-{
-    Settings *preferences = [[Settings alloc] init];
-    NSString *deviceID = [preferences deviceID];
-    
-    // We can also retreive other things at this time
-    
-    //...
-    
-    NSLog(@"%@",deviceID);
-}
+
 
 - (void)didReceiveMemoryWarning
 {
