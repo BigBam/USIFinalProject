@@ -44,6 +44,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"Challengers";
+    
+    self.map = [[MKMapView alloc] initWithFrame:self.view.frame];
+    self.map.delegate = self;
+    [self.view addSubview:self.map];
+
     [self configureView];
 }
 
@@ -69,7 +76,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Recent", @"Recent");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
@@ -81,4 +88,7 @@
     self.masterPopoverController = nil;
 }
 
+- (IBAction)spanUserLocation:(UIBarButtonItem *)sender {
+    NSLog(@"Zoom...");
+}
 @end

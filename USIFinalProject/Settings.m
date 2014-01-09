@@ -10,25 +10,21 @@
 
 @implementation Settings
 
+- (NSUserDefaults *) userDefaults
+{
+    return [NSUserDefaults standardUserDefaults];
+}
+
 -(NSString *) deviceID
 {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *prefs = [self userDefaults];
     if([prefs stringForKey:@"deviceID"] == NULL)
     {
-        // Device ID is not set so we need to generate one
+        // Device ID is not set so we need to generate a unique one
         [prefs setObject:[self generateDeviceID] forKey:@"deviceID"];
         [prefs synchronize];
         
         // Save the deviceID to the web server
-        
-        //...
-
-    }
-    else
-    {
-        // Retrieve settings from the web server according to the deviceID
-        
-        //...
     }
     
     return [prefs stringForKey:@"deviceID"];
@@ -36,20 +32,17 @@
 
 - (NSString *) generateDeviceID
 {
-    /*
-     
-        Later, we will generate a unique ID from the database
+    // Initialize
+    NSError *error;
+    NSData *data = [[NSData alloc] init];
     
-     */
+    // Get a new key from webservice
+    data = [NSData dataWithContentsOfURL:[NSURL URLWithString: @"http://scorekpr.com/json/generateNewKey"]];
     
-    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    NSMutableString *randomString = [NSMutableString stringWithCapacity:6];
+    // Serialize results
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
-    for (int i = 0; i < 6; i++) {
-        [randomString appendFormat:@"%C", [letters characterAtIndex:arc4random() % [letters length]]];
-    }
-    
-    return randomString;
+    // Return the unique identifier
+    return [jsonDict objectForKey:@"id"];
 }
-
 @end

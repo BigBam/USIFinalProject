@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Settings : NSObject
-- (NSString *) generateDeviceID;
+- (NSUserDefaults *) userDefaults;
 - (NSString *) deviceID;
+- (NSString *) generateDeviceID;
+// (NSDictionary *) saveUser;
 @end
