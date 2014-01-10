@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7613F984187F4776000241DC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613F982187F4776000241DC /* GameViewController.m */; };
+		7613F985187F4776000241DC /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7613F983187F4776000241DC /* GameViewController.xib */; };
+		7613F988187F481D000241DC /* CheckerPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613F987187F481D000241DC /* CheckerPiece.m */; };
+		7613F98A187F484D000241DC /* Checkerboard_img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7613F989187F484D000241DC /* Checkerboard_img.jpg */; };
+		7613F98C187F5319000241DC /* black_crown_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 7613F98B187F5319000241DC /* black_crown_img.png */; };
+		7613F992187F8840000241DC /* white_crown_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 7613F991187F8840000241DC /* white_crown_img.png */; };
+		7613F994187F8A21000241DC /* black_piece_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 7613F993187F8A21000241DC /* black_piece_img.png */; };
+		7613F996187F8C55000241DC /* white_piece_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 7613F995187F8C55000241DC /* white_piece_img.png */; };
+		7613F99A187F8EB8000241DC /* CheckersGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7613F999187F8EB8000241DC /* CheckersGame.m */; };
 		869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449EE187DEAED00255CF4 /* MyAnnotation.m */; };
 		869449FA187E89C000255CF4 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449F9187E89C000255CF4 /* Settings.m */; };
 		86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A493A1187F132B00287D83 /* SettingsViewController.m */; };
@@ -46,6 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7613F981187F4776000241DC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		7613F982187F4776000241DC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		7613F983187F4776000241DC /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		7613F986187F481D000241DC /* CheckerPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckerPiece.h; sourceTree = "<group>"; };
+		7613F987187F481D000241DC /* CheckerPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckerPiece.m; sourceTree = "<group>"; };
+		7613F989187F484D000241DC /* Checkerboard_img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Checkerboard_img.jpg; path = ../../../../../Downloads/Checkerboard_img.jpg; sourceTree = "<group>"; };
+		7613F98B187F5319000241DC /* black_crown_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black_crown_img.png; path = ../../../../../Downloads/black_crown_img.png; sourceTree = "<group>"; };
+		7613F991187F8840000241DC /* white_crown_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_crown_img.png; path = ../../../../../Downloads/white_crown_img.png; sourceTree = "<group>"; };
+		7613F993187F8A21000241DC /* black_piece_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black_piece_img.png; path = ../../../../../Downloads/black_piece_img.png; sourceTree = "<group>"; };
+		7613F995187F8C55000241DC /* white_piece_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_piece_img.png; path = ../../../../../Downloads/white_piece_img.png; sourceTree = "<group>"; };
+		7613F998187F8EB8000241DC /* CheckersGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckersGame.h; sourceTree = "<group>"; };
+		7613F999187F8EB8000241DC /* CheckersGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckersGame.m; sourceTree = "<group>"; };
 		869449ED187DEAED00255CF4 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		869449EE187DEAED00255CF4 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		869449F8187E89C000255CF4 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -110,6 +131,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7613F97F187F4653000241DC /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				7613F997187F8D7D000241DC /* ViewController */,
+				7613F980187F4661000241DC /* Objects */,
+				7613F998187F8EB8000241DC /* CheckersGame.h */,
+				7613F999187F8EB8000241DC /* CheckersGame.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		7613F980187F4661000241DC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7613F986187F481D000241DC /* CheckerPiece.h */,
+				7613F987187F481D000241DC /* CheckerPiece.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		7613F997187F8D7D000241DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7613F981187F4776000241DC /* GameViewController.h */,
+				7613F982187F4776000241DC /* GameViewController.m */,
+				7613F983187F4776000241DC /* GameViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		7613F99B187F8F56000241DC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7613F989187F484D000241DC /* Checkerboard_img.jpg */,
+				7613F98B187F5319000241DC /* black_crown_img.png */,
+				7613F991187F8840000241DC /* white_crown_img.png */,
+				7613F993187F8A21000241DC /* black_piece_img.png */,
+				7613F995187F8C55000241DC /* white_piece_img.png */,
+			);
+			name = Images;
+			path = USIFinalProject;
+			sourceTree = "<group>";
+		};
 		869449F0187DEAF400255CF4 /*  Annotation */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +198,12 @@
 		86B93353187DDE7500C28319 = {
 			isa = PBXGroup;
 			children = (
+				7613F97F187F4653000241DC /* Game */,
 				86B93367187DDE7500C28319 /* USIFinalProject */,
 				86B9335E187DDE7500C28319 /* Frameworks */,
 				86B9335D187DDE7500C28319 /* Products */,
 				86B93390187DDE7500C28319 /* USIFinalProjectTests */,
+				7613F99B187F8F56000241DC /* Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +366,7 @@
 			files = (
 				86B93378187DDE7500C28319 /* Main_iPad.storyboard in Resources */,
 				86B93383187DDE7500C28319 /* Images.xcassets in Resources */,
+				7613F985187F4776000241DC /* GameViewController.xib in Resources */,
 				86B93375187DDE7500C28319 /* Main_iPhone.storyboard in Resources */,
 				86A493AA187F4D2900287D83 /* pin.png in Resources */,
 				86B9336C187DDE7500C28319 /* InfoPlist.strings in Resources */,
@@ -311,6 +378,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7613F992187F8840000241DC /* white_crown_img.png in Resources */,
+				7613F994187F8A21000241DC /* black_piece_img.png in Resources */,
+				7613F98C187F5319000241DC /* black_crown_img.png in Resources */,
+				7613F996187F8C55000241DC /* white_piece_img.png in Resources */,
+				7613F98A187F484D000241DC /* Checkerboard_img.jpg in Resources */,
 				86B93395187DDE7500C28319 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +398,9 @@
 				86B9337E187DDE7500C28319 /* MasterViewController.m in Sources */,
 				869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */,
 				86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */,
+				7613F984187F4776000241DC /* GameViewController.m in Sources */,
 				86B93372187DDE7500C28319 /* AppDelegate.m in Sources */,
+				7613F988187F481D000241DC /* CheckerPiece.m in Sources */,
 				86B9337B187DDE7500C28319 /* USIFinalProject.xcdatamodeld in Sources */,
 				86B9336E187DDE7500C28319 /* main.m in Sources */,
 				869449FA187E89C000255CF4 /* Settings.m in Sources */,
@@ -338,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B93397187DDE7500C28319 /* USIFinalProjectTests.m in Sources */,
+				7613F99A187F8EB8000241DC /* CheckersGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
