@@ -172,6 +172,8 @@
 		7613F99B187F8F56000241DC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				86BAB17B187FEF1C00E912C3 /* icon_settings.png */,
+				86A493A9187F4D2900287D83 /* pin.png */,
 				7613F989187F484D000241DC /* Checkerboard_img.jpg */,
 				7613F98B187F5319000241DC /* black_crown_img.png */,
 				7613F991187F8840000241DC /* white_crown_img.png */,
@@ -241,15 +243,12 @@
 		86B93367187DDE7500C28319 /* USIFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				86BAB17D188008E900E912C3 /* MasterView */,
+				86BAB17F188008FB00E912C3 /* DetailView */,
+				86BAB17E188008F200E912C3 /* ChallengersList */,
+				86B93379187DDE7500C28319 /* USIFinalProject.xcdatamodeld */,
 				86B93370187DDE7500C28319 /* AppDelegate.h */,
 				86B93371187DDE7500C28319 /* AppDelegate.m */,
-				86B9337C187DDE7500C28319 /* MasterViewController.h */,
-				86B9337D187DDE7500C28319 /* MasterViewController.m */,
-				86BAB176187FEA9200E912C3 /* ChallengersListViewController.h */,
-				86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */,
-				86B9337F187DDE7500C28319 /* DetailViewController.h */,
-				86B93380187DDE7500C28319 /* DetailViewController.m */,
-				86B93379187DDE7500C28319 /* USIFinalProject.xcdatamodeld */,
 				86B933A4187DE1E800C28319 /* Classes */,
 				86B93368187DDE7500C28319 /* Supporting Files */,
 			);
@@ -259,10 +258,8 @@
 		86B93368187DDE7500C28319 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				86A493A9187F4D2900287D83 /* pin.png */,
 				86B93373187DDE7500C28319 /* Main_iPhone.storyboard */,
 				86B93376187DDE7500C28319 /* Main_iPad.storyboard */,
-				86BAB17B187FEF1C00E912C3 /* icon_settings.png */,
 				86B93369187DDE7500C28319 /* USIFinalProject-Info.plist */,
 				86B9336A187DDE7500C28319 /* InfoPlist.strings */,
 				86B9336D187DDE7500C28319 /* main.m */,
@@ -307,6 +304,33 @@
 				86BAB173187FDB9D00E912C3 /* ServerData.m */,
 			);
 			name = Server;
+			sourceTree = "<group>";
+		};
+		86BAB17D188008E900E912C3 /* MasterView */ = {
+			isa = PBXGroup;
+			children = (
+				86B9337C187DDE7500C28319 /* MasterViewController.h */,
+				86B9337D187DDE7500C28319 /* MasterViewController.m */,
+			);
+			name = MasterView;
+			sourceTree = "<group>";
+		};
+		86BAB17E188008F200E912C3 /* ChallengersList */ = {
+			isa = PBXGroup;
+			children = (
+				86BAB176187FEA9200E912C3 /* ChallengersListViewController.h */,
+				86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */,
+			);
+			name = ChallengersList;
+			sourceTree = "<group>";
+		};
+		86BAB17F188008FB00E912C3 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				86B9337F187DDE7500C28319 /* DetailViewController.h */,
+				86B93380187DDE7500C28319 /* DetailViewController.m */,
+			);
+			name = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

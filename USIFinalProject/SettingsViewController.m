@@ -38,11 +38,23 @@
 }
 
 - (IBAction)saveSettings:(id)sender {
-    // Save username to database with the respective device id
     Settings *pref = [[Settings alloc] init];
     
     // Save username to settings
     [pref saveUserName:self.usernameTxt.text];
+    
+    // Save username to database with the respective device id
+    
+    ServerData *webSave = [[ServerData alloc] init];
+    NSArray *objects = [[NSArray alloc] initWithObjects:[pref deviceID], [pref username], nil];
+    NSArray *keys = [[NSArray alloc] initWithObjects:@"deviceid", @"username", nil];
+    
+    NSDictionary *param = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    
+    NSDictionary *results = [webSave simpleJsonSendFetch:@"saveNewUser" parameters:param];
+    
+    
+
     
     // Go back to root
     [self.navigationController popToRootViewControllerAnimated:YES];

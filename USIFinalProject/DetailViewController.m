@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ChallengersListViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -27,9 +28,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    webFetcher = [[ServerData alloc] init];
     allChallengers = [[NSMutableArray alloc] init];
     annotationArray = [[NSMutableArray alloc] init];
+    webFetcher = [[ServerData alloc] init];
     
     self.title = @"Map";
     
@@ -41,7 +42,13 @@
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_settings.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings:)];
     self.navigationController.navigationBar.topItem.rightBarButtonItem = editButton;
     
-    allChallengers = [webFetcher simpleJsonFetch:@"allChallengers"];
+    self.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
+    
+    // Cheat - set up the second tab when this view loads
+    NSArray *vc = self.tabBarController.viewControllers;
+    ChallengersListViewController *cvc = [vc objectAtIndex:1];
+    cvc.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
+    cvc.title = @"List";
     
     [self drawAnnotations];
     [self configureView];
@@ -49,13 +56,13 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
+
+    
     // Check if deviceID and username is set up
     
     //..
     
-    // Retrieve ALL other challengers to appear on the map
-    
-    //...
+
     
     // Retrieve all nearby challengers to appear in the other table
     
@@ -96,8 +103,11 @@
 
 -(void) drawAnnotations
 {
-
-    [annotationArray removeAllObjects];
+    // Retrieve ALL other challengers to appear on the map
+    allChallengers = [webFetcher simpleJsonFetch:@"allChallengers"];
+    
+    [self clearAnnotations];
+    
     for(NSDictionary *challenger in allChallengers)
     {
         float lat = [[challenger objectForKey:@"latitude"] floatValue];
@@ -113,8 +123,8 @@
 
     }
     
-    [self.map addAnnotations:annotationArray];
     
+    [self.map addAnnotations:annotationArray];
 
 
 }
@@ -189,7 +199,7 @@
         [annotationView setFrame:CGRectMake(0, 0,imageSize, imageSize)];
         
         [annotationView setLeftCalloutAccessoryView:button];
-        [annotationView setDraggable:YES];
+        //[annotationView setDraggable:YES];
         
         
         return annotationView;
@@ -218,9 +228,7 @@
     
     if(newState == MKAnnotationViewDragStateEnding)
     {
-        //[self clearAnnotations];
-        
-        //[self drawAnnotations];
+       // [self drawAnnotations];
     }
 }
 

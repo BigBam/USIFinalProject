@@ -12,6 +12,7 @@
 @interface Settings : NSObject
 - (NSUserDefaults *) userDefaults;
 - (NSString *) deviceID;
+- (NSString *) username;
 - (NSString *) generateDeviceID;
 -(void) saveUserName:(NSString *) username;
 

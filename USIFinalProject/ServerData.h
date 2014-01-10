@@ -11,5 +11,6 @@
 @interface ServerData : NSObject
 
 -(id) simpleJsonFetch:(NSString*) method;
+-(id) simpleJsonSendFetch:(NSString*) method parameters:(NSDictionary*)param;
 
 @end

@@ -28,6 +28,12 @@
     return [prefs stringForKey:@"deviceID"];
 }
 
+-(NSString *) username
+{
+    NSUserDefaults *prefs = [self userDefaults];
+    return [prefs stringForKey:@"username"];
+}
+
 -(void) saveUserName:(NSString *) username
 {
     NSUserDefaults *prefs = [self userDefaults];
@@ -54,8 +60,6 @@
 // Web service functions
 - (BOOL) checkAvailableUsername:(NSString *)username
 {
-    NSLog(@"%@", username);
-    
     // Initialize
     NSError *error;
     NSData *data = [[NSData alloc] init];
