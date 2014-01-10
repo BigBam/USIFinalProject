@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Settings.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController<UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *usernameTxt;
+@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+
+- (IBAction)saveSettings:(id)sender;
 
 @end

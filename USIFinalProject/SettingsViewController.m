@@ -27,6 +27,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.usernameTxt.delegate = self;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)saveSettings:(id)sender {
+    
+}
 @end
