@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTxt;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
-
 - (IBAction)saveSettings:(id)sender;
 
 @end

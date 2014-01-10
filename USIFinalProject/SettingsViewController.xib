@@ -62,7 +62,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-wG-ctU">
-                    <rect key="frame" x="0.0" y="336" width="320" height="30"/>
+                    <rect key="frame" x="0.0" y="328" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.96524711277173914" green="0.96524711277173914" blue="0.96524711277173914" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="SAVE">
