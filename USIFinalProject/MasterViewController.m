@@ -18,6 +18,7 @@
 {
     NSString *deviceId;
     NSString *username;
+    ServerData *webFetcher;
 }
 - (void)awakeFromNib
 {
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    webFetcher = [[ServerData alloc] init];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -44,8 +47,23 @@
     username = [settings objectForKey:@"username"];
     if(username == nil)
     {
+        // We have a new user to set up
         SettingsViewController *content = [[SettingsViewController alloc] init];
         [self.detailViewController.navigationController pushViewController:content animated:YES];
+    }
+    else
+    {
+        // This person already has his/her account set up
+        // Retrieve user info from database (according to deviceID)
+        
+        //...
+        
+        
+        
+        // Retrieve recent game history from database and save it
+       // NSDictionary *results = [webFetcher simpleJsonFetch:@"]
+        //...
+        
     }
 }
 
@@ -53,6 +71,7 @@
 {
     Settings *pref = [[Settings alloc] init];
     deviceId = [[NSString alloc] initWithString:[pref deviceID]];
+    NSLog(@"%@",deviceId);
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,7 +152,7 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = object;
+        //self.detailViewController.detailItem = object;
     }
 }
 

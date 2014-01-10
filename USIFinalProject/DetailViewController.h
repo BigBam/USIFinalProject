@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "ServerData.h"
 #import "Settings.h"
 #import "MyAnnotation.h"
 
@@ -22,5 +23,5 @@
 - (IBAction)openSettings:(id)sender;
 
 -(void) clearAnnotations;
--(void) redrawAnnotations;
+-(void) drawAnnotations;
 @end

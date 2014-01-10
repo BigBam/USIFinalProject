@@ -16,10 +16,51 @@
 @implementation DetailViewController
 {
     NSMutableArray *annotationArray;
+    NSMutableArray *allChallengers;
     MKCoordinateRegion currentSpan;
+    
+    ServerData *webFetcher;
 }
 
-#pragma mark - Managing the detail item
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    webFetcher = [[ServerData alloc] init];
+    allChallengers = [[NSMutableArray alloc] init];
+    annotationArray = [[NSMutableArray alloc] init];
+    
+    self.title = @"Map";
+    
+    self.map = [[MKMapView alloc] initWithFrame:self.view.frame];
+    self.map.delegate = self;
+    [self.view addSubview:self.map];
+    
+    // BarButton items
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_settings.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings:)];
+    self.navigationController.navigationBar.topItem.rightBarButtonItem = editButton;
+    
+    allChallengers = [webFetcher simpleJsonFetch:@"allChallengers"];
+    
+    [self drawAnnotations];
+    [self configureView];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    // Check if deviceID and username is set up
+    
+    //..
+    
+    // Retrieve ALL other challengers to appear on the map
+    
+    //...
+    
+    // Retrieve all nearby challengers to appear in the other table
+    
+    // ..
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -44,26 +85,7 @@
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    annotationArray = [[NSMutableArray alloc] init];
-    
-    self.title = @"Challengers";
-    
-    self.map = [[MKMapView alloc] initWithFrame:self.view.frame];
-    self.map.delegate = self;
-    [self.view addSubview:self.map];
 
-    
-    
-
-
-
-    [self configureView];
-}
 
 -(void) clearAnnotations
 {
@@ -74,23 +96,26 @@
 
 -(void) drawAnnotations
 {
+
+    [annotationArray removeAllObjects];
+    for(NSDictionary *challenger in allChallengers)
+    {
+        float lat = [[challenger objectForKey:@"latitude"] floatValue];
+        float lng = [[challenger objectForKey:@"longitude"] floatValue];
+        
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(lat, lng);
+        
+        MyAnnotation *annotation = [[MyAnnotation alloc] initWithCoordinates:location title:[challenger objectForKey:@"username"] subTitle:@"---" userRank:[NSNumber numberWithInt:0]];
+
+        [annotationArray addObject:annotation];
+        
+        
+
+    }
     
+    [self.map addAnnotations:annotationArray];
     
-    
-    
-    float lat = 33.9304f;
-    float lng = -84.3733f;
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(lat, lng);
-    
-    MyAnnotation *annotation = [[MyAnnotation alloc] initWithCoordinates:location title:@"title" subTitle:@"subtitle" userRank:[NSNumber numberWithInt:3]];
-    
-    // initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *)paramTitle subTitle:(NSString *)paramSubTitle userRank:(NSNumber *)level
-    [annotationArray addObject:annotation];
-    
-    
-    // Span to the region
-    //[self.map setRegion:region animated:YES];
-    [self.map addAnnotation:annotation];
+
 
 }
 
@@ -148,7 +173,8 @@
         annotationView.canShowCallout = YES;
         annotationView.image = [UIImage imageNamed:@"pin.png"];
         
-        
+        float imageSize = 50;
+        /*
         float scaleFactor = (33 - currentSpan.span.latitudeDelta)/33;
         if(scaleFactor < 0)
         {
@@ -156,6 +182,7 @@
         }
         float sizeAdjust = (50 - 10) * scaleFactor;
         float imageSize = sizeAdjust + 10;
+        */
         
         //NSLog(@"scaleFactor:%f sizeAdjust:%f imageSize:%f ", scaleFactor, sizeAdjust, imageSize);
         
@@ -163,6 +190,7 @@
         
         [annotationView setLeftCalloutAccessoryView:button];
         [annotationView setDraggable:YES];
+        
         
         return annotationView;
     }
@@ -172,6 +200,7 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+    
     /*
     MyAnnotation *thisAnnotation = view.annotation;
     
@@ -189,9 +218,9 @@
     
     if(newState == MKAnnotationViewDragStateEnding)
     {
-        [self clearAnnotations];
+        //[self clearAnnotations];
         
-        [self drawAnnotations];
+        //[self drawAnnotations];
     }
 }
 
@@ -202,7 +231,7 @@
     //NSLog(@"The zoom has changed %f %f", currentSpan.span.latitudeDelta, currentSpan.span.longitudeDelta);
 
     // Redraw annotations?
-    [self drawAnnotations];
+    //[self drawAnnotations];
     //
 }
 @end

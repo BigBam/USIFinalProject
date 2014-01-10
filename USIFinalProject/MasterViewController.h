@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Settings.h"
+#import "ServerData.h"
 
 @class DetailViewController;
 

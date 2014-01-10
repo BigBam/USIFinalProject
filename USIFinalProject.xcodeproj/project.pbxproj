@@ -42,6 +42,9 @@
 		86B93397187DDE7500C28319 /* USIFinalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B93396187DDE7500C28319 /* USIFinalProjectTests.m */; };
 		86B933A1187DDE8B00C28319 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B933A0187DDE8B00C28319 /* MapKit.framework */; };
 		86B933A3187DDE9200C28319 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B933A2187DDE9200C28319 /* CoreLocation.framework */; };
+		86BAB174187FDB9D00E912C3 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BAB173187FDB9D00E912C3 /* ServerData.m */; };
+		86BAB178187FEA9200E912C3 /* ChallengersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */; };
+		86BAB17C187FEF1C00E912C3 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BAB17B187FEF1C00E912C3 /* icon_settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,11 @@
 		86B93396187DDE7500C28319 /* USIFinalProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USIFinalProjectTests.m; sourceTree = "<group>"; };
 		86B933A0187DDE8B00C28319 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		86B933A2187DDE9200C28319 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		86BAB172187FDB9D00E912C3 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
+		86BAB173187FDB9D00E912C3 /* ServerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerData.m; sourceTree = "<group>"; };
+		86BAB176187FEA9200E912C3 /* ChallengersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengersListViewController.h; sourceTree = "<group>"; };
+		86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengersListViewController.m; sourceTree = "<group>"; };
+		86BAB17B187FEF1C00E912C3 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +245,8 @@
 				86B93371187DDE7500C28319 /* AppDelegate.m */,
 				86B9337C187DDE7500C28319 /* MasterViewController.h */,
 				86B9337D187DDE7500C28319 /* MasterViewController.m */,
+				86BAB176187FEA9200E912C3 /* ChallengersListViewController.h */,
+				86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */,
 				86B9337F187DDE7500C28319 /* DetailViewController.h */,
 				86B93380187DDE7500C28319 /* DetailViewController.m */,
 				86B93379187DDE7500C28319 /* USIFinalProject.xcdatamodeld */,
@@ -252,6 +262,7 @@
 				86A493A9187F4D2900287D83 /* pin.png */,
 				86B93373187DDE7500C28319 /* Main_iPhone.storyboard */,
 				86B93376187DDE7500C28319 /* Main_iPad.storyboard */,
+				86BAB17B187FEF1C00E912C3 /* icon_settings.png */,
 				86B93369187DDE7500C28319 /* USIFinalProject-Info.plist */,
 				86B9336A187DDE7500C28319 /* InfoPlist.strings */,
 				86B9336D187DDE7500C28319 /* main.m */,
@@ -284,8 +295,18 @@
 			children = (
 				869449F1187E7DAD00255CF4 /* Settings */,
 				869449F0187DEAF400255CF4 /*  Annotation */,
+				86BAB175187FDBA500E912C3 /* Server */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		86BAB175187FDBA500E912C3 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				86BAB172187FDB9D00E912C3 /* ServerData.h */,
+				86BAB173187FDB9D00E912C3 /* ServerData.m */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +390,7 @@
 				7613F985187F4776000241DC /* GameViewController.xib in Resources */,
 				86B93375187DDE7500C28319 /* Main_iPhone.storyboard in Resources */,
 				86A493AA187F4D2900287D83 /* pin.png in Resources */,
+				86BAB17C187FEF1C00E912C3 /* icon_settings.png in Resources */,
 				86B9336C187DDE7500C28319 /* InfoPlist.strings in Resources */,
 				86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */,
 			);
@@ -397,11 +419,13 @@
 				86B93381187DDE7500C28319 /* DetailViewController.m in Sources */,
 				86B9337E187DDE7500C28319 /* MasterViewController.m in Sources */,
 				869449EF187DEAED00255CF4 /* MyAnnotation.m in Sources */,
+				86BAB174187FDB9D00E912C3 /* ServerData.m in Sources */,
 				86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */,
 				7613F984187F4776000241DC /* GameViewController.m in Sources */,
 				86B93372187DDE7500C28319 /* AppDelegate.m in Sources */,
 				7613F988187F481D000241DC /* CheckerPiece.m in Sources */,
 				86B9337B187DDE7500C28319 /* USIFinalProject.xcdatamodeld in Sources */,
+				86BAB178187FEA9200E912C3 /* ChallengersListViewController.m in Sources */,
 				86B9336E187DDE7500C28319 /* main.m in Sources */,
 				869449FA187E89C000255CF4 /* Settings.m in Sources */,
 			);
