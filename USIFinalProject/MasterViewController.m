@@ -18,6 +18,7 @@
 {
     NSString *deviceId;
     NSString *username;
+    NSArray *gameHistory;
     ServerData *webFetcher;
 }
 - (void)awakeFromNib
@@ -35,10 +36,20 @@
     webFetcher = [[ServerData alloc] init];
     
 	// Do any additional setup after loading the view, typically from a nib.
+    /*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+     */
+    
+    if(![UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad)
+    {
+        UIBarButtonItem *challengerBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(goForward)];
+        self.navigationItem.rightBarButtonItem = challengerBtn;
+    }
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     // Check username from settings to make sure we're set up properly
@@ -56,15 +67,13 @@
         // This person already has his/her account set up
         // Retrieve user info from database (according to deviceID)
         
-        //...
-        
-        
-        
-        // Retrieve recent game history from database and save it
-       // NSDictionary *results = [webFetcher simpleJsonFetch:@"]
-        //...
-        
+        //..
     }
+
+    // Retrieve recent game history from database and save it
+    gameHistory = [[NSArray alloc] init];
+    gameHistory = [webFetcher simpleJsonFetch:@"gameHistory"];
+    [self updateGameHistory:gameHistory];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -80,25 +89,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+-(void) updateGameHistory:(NSArray *)history
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+    for(NSDictionary *game in history)
+    {
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+        NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+        
+        NSNumber *id_param = [NSNumber numberWithInt:[[game objectForKey:@"id"] integerValue]];
+        NSNumber *who_won = [NSNumber numberWithInt:[[game objectForKey:@"who_won"] integerValue]];
+        
+        [newManagedObject setValue:id_param forKey:@"id"];
+        [newManagedObject setValue:[game objectForKey:@"player1_name"] forKey:@"player1_name"];
+        [newManagedObject setValue:[game objectForKey:@"player2_name"] forKey:@"player2_name"];
+        [newManagedObject setValue:who_won forKey:@"who_won"];
+
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
     }
+    
+
 }
+
 
 #pragma mark - Table View
 
@@ -126,6 +142,7 @@
     return YES;
 }
 
+/*
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -141,6 +158,7 @@
         }
     }   
 }
+*/
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -151,21 +169,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-  //  [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        //[[segue destinationViewController] setDetailItem:object];
-        //
-
-        
-    }
-}
 
 #pragma mark - Fetched results controller
 
@@ -177,14 +182,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"GameHistory" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"player1_name" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -269,7 +274,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ vs %@", [object valueForKey:@"player1_name"], [object valueForKey:@"player2_name"]];
 }
 
 @end

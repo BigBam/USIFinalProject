@@ -53,9 +53,7 @@
     
     NSDictionary *results = [webSave simpleJsonSendFetch:@"saveNewUser" parameters:param];
     
-    
 
-    
     // Go back to root
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

@@ -29,7 +29,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.contentInset = UIEdgeInsetsMake(66, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(66, 0, 90, 0);
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -69,7 +69,6 @@
     int state = [[currentRow objectForKey:@"state"] integerValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"[%i-%i] (%f, %f)",
                                  [[currentRow objectForKey:@"total_wins"] integerValue],
-                                 [[currentRow objectForKey:@"total_wins"] integerValue] +
                                  [[currentRow objectForKey:@"total_losses"] integerValue],
                                  [[currentRow objectForKey:@"latitude"] floatValue],
                                  [[currentRow objectForKey:@"longitude"] floatValue]];
@@ -78,10 +77,14 @@
     {
         // User is in waiting inactive state
         cell.imageView.image = [UIImage imageNamed:@"state0.png"];
-    } else if(state == 2) {
+    }
+    else if(state == 2)
+    {
         // User is waiting in active state
         cell.imageView.image = [UIImage imageNamed:@"state1.png"];
-    } else {
+    }
+    else
+    {
         // User is active in game
         cell.imageView.image = [UIImage imageNamed:@"state2.png"];
     }

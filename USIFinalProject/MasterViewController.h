@@ -21,4 +21,6 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+-(void) updateGameHistory:(NSArray *)history;
+
 @end

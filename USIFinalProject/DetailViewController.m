@@ -20,6 +20,7 @@
     NSMutableArray *allChallengers;
     MKCoordinateRegion currentSpan;
     
+    // Handles web service request
     ServerData *webFetcher;
 }
 
