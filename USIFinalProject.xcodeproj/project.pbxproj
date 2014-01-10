@@ -45,6 +45,9 @@
 		86BAB174187FDB9D00E912C3 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BAB173187FDB9D00E912C3 /* ServerData.m */; };
 		86BAB178187FEA9200E912C3 /* ChallengersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */; };
 		86BAB17C187FEF1C00E912C3 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BAB17B187FEF1C00E912C3 /* icon_settings.png */; };
+		86C54BBA1880590E00B6E6BB /* state1.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C54BB71880590E00B6E6BB /* state1.png */; };
+		86C54BBB1880590E00B6E6BB /* state0.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C54BB81880590E00B6E6BB /* state0.png */; };
+		86C54BBC1880590E00B6E6BB /* state2.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C54BB91880590E00B6E6BB /* state2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,9 @@
 		86BAB176187FEA9200E912C3 /* ChallengersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengersListViewController.h; sourceTree = "<group>"; };
 		86BAB177187FEA9200E912C3 /* ChallengersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengersListViewController.m; sourceTree = "<group>"; };
 		86BAB17B187FEF1C00E912C3 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		86C54BB71880590E00B6E6BB /* state1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = state1.png; sourceTree = "<group>"; };
+		86C54BB81880590E00B6E6BB /* state0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = state0.png; sourceTree = "<group>"; };
+		86C54BB91880590E00B6E6BB /* state2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = state2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,9 @@
 			children = (
 				86BAB17B187FEF1C00E912C3 /* icon_settings.png */,
 				86A493A9187F4D2900287D83 /* pin.png */,
+				86C54BB71880590E00B6E6BB /* state1.png */,
+				86C54BB81880590E00B6E6BB /* state0.png */,
+				86C54BB91880590E00B6E6BB /* state2.png */,
 				7613F989187F484D000241DC /* Checkerboard_img.jpg */,
 				7613F98B187F5319000241DC /* black_crown_img.png */,
 				7613F991187F8840000241DC /* white_crown_img.png */,
@@ -413,9 +422,12 @@
 				86B93383187DDE7500C28319 /* Images.xcassets in Resources */,
 				7613F985187F4776000241DC /* GameViewController.xib in Resources */,
 				86B93375187DDE7500C28319 /* Main_iPhone.storyboard in Resources */,
+				86C54BBB1880590E00B6E6BB /* state0.png in Resources */,
 				86A493AA187F4D2900287D83 /* pin.png in Resources */,
 				86BAB17C187FEF1C00E912C3 /* icon_settings.png in Resources */,
 				86B9336C187DDE7500C28319 /* InfoPlist.strings in Resources */,
+				86C54BBC1880590E00B6E6BB /* state2.png in Resources */,
+				86C54BBA1880590E00B6E6BB /* state1.png in Resources */,
 				86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

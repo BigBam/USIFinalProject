@@ -28,12 +28,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Initialize
     allChallengers = [[NSMutableArray alloc] init];
     annotationArray = [[NSMutableArray alloc] init];
     webFetcher = [[ServerData alloc] init];
     
+    // Set up the map
     self.title = @"Map";
-    
     self.map = [[MKMapView alloc] initWithFrame:self.view.frame];
     self.map.delegate = self;
     [self.view addSubview:self.map];
@@ -42,13 +43,28 @@
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_settings.png"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings:)];
     self.navigationController.navigationBar.topItem.rightBarButtonItem = editButton;
     
+    // TabBar1 image (placeholder)
     self.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
+
     
-    // Cheat - set up the second tab when this view loads
+    // Retrieve ALL other challengers to appear on the map
+    allChallengers = [webFetcher simpleJsonFetch:@"allChallengers"];
+    
+    
+    
+    // Set up Challengers Table
+        // (CHEAT - set up the second tab when this view loads)
     NSArray *vc = self.tabBarController.viewControllers;
     ChallengersListViewController *cvc = [vc objectAtIndex:1];
+    
+    // TabBar2 image (placeholder)
     cvc.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
     cvc.title = @"List";
+    
+    // Save challengers list to the challenger table
+    cvc.allChallengers = allChallengers;
+    
+    
     
     [self drawAnnotations];
     [self configureView];
@@ -57,16 +73,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
 
-    
-    // Check if deviceID and username is set up
-    
-    //..
-    
-
-    
-    // Retrieve all nearby challengers to appear in the other table
-    
-    // ..
 }
 
 - (void)setDetailItem:(id)newDetailItem
@@ -92,8 +98,6 @@
     }
 }
 
-
-
 -(void) clearAnnotations
 {
     
@@ -103,8 +107,6 @@
 
 -(void) drawAnnotations
 {
-    // Retrieve ALL other challengers to appear on the map
-    allChallengers = [webFetcher simpleJsonFetch:@"allChallengers"];
     
     [self clearAnnotations];
     
@@ -118,15 +120,9 @@
         MyAnnotation *annotation = [[MyAnnotation alloc] initWithCoordinates:location title:[challenger objectForKey:@"username"] subTitle:@"---" userRank:[NSNumber numberWithInt:0]];
 
         [annotationArray addObject:annotation];
-        
-        
-
     }
     
-    
     [self.map addAnnotations:annotationArray];
-
-
 }
 
 
@@ -211,17 +207,10 @@
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     
-    /*
-    MyAnnotation *thisAnnotation = view.annotation;
-    
-    clickedTitle = thisAnnotation.title;
-    clickedAddress = thisAnnotation.subtitle;
-    clickedRating = thisAnnotation.rating;
-    
-    [self performSegueWithIdentifier:@"showDetails" sender:self];
-     */
+    // Start game
 }
 
+/*
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
 {
 
@@ -231,6 +220,7 @@
        // [self drawAnnotations];
     }
 }
+*/
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     

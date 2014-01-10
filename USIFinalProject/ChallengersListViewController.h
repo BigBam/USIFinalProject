@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ChallengersListViewController : UITableViewController
-
+@property (strong, nonatomic) NSMutableArray *allChallengers;
 @end
