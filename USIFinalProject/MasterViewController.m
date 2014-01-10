@@ -15,7 +15,10 @@
 @end
 
 @implementation MasterViewController
-
+{
+    NSString *deviceId;
+    NSString *username;
+}
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -35,21 +38,21 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-// Open settings automatically if it's not set up
-/*
-    SettingsViewController *content = [[SettingsViewController alloc] init];
-
-    [self.detailViewController.navigationController pushViewController:content animated:YES];
- */
+    // Check username from settings to make sure we're set up properly
+    Settings *pref = [[Settings alloc] init];
+    NSUserDefaults *settings = [pref userDefaults];
+    username = [settings objectForKey:@"username"];
+    if(username == nil)
+    {
+        SettingsViewController *content = [[SettingsViewController alloc] init];
+        [self.detailViewController.navigationController pushViewController:content animated:YES];
+    }
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    Settings *preferences = [[Settings alloc] init];
-    NSString *deviceID = [preferences deviceID];
-
-    
-    NSLog(@"%@",deviceID);
+    Settings *pref = [[Settings alloc] init];
+    deviceId = [[NSString alloc] initWithString:[pref deviceID]];
 }
 
 - (void)didReceiveMemoryWarning

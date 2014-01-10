@@ -9,9 +9,7 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
-{
-    Settings *pref;
-}
+
 @end
 
 @implementation SettingsViewController
@@ -28,10 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Initialize settings
-    pref = [[Settings alloc] init];
-    
+
     // Delegate username input
     self.usernameTxt.delegate = self;
 }
@@ -44,8 +39,10 @@
 
 - (IBAction)saveSettings:(id)sender {
     // Save username to database with the respective device id
+    Settings *pref = [[Settings alloc] init];
     
     // Save username to settings
+    [pref saveUserName:self.usernameTxt.text];
     
     // Go back to root
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -53,6 +50,7 @@
 
 - (IBAction)editingChanged:(id)sender
 {
+    Settings *pref = [[Settings alloc] init];
     if([pref checkAvailableUsername:[NSString stringWithFormat:@"%@",self.usernameTxt.text]])
     {
         // Username request good

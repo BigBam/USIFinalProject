@@ -28,6 +28,13 @@
     return [prefs stringForKey:@"deviceID"];
 }
 
+-(void) saveUserName:(NSString *) username
+{
+    NSUserDefaults *prefs = [self userDefaults];
+    [prefs setObject:username forKey:@"username"];
+    [prefs synchronize];
+}
+
 - (NSString *) generateDeviceID
 {
     // Initialize
