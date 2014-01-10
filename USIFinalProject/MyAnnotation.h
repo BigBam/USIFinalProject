@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *subtitle;
-@property (nonatomic, copy, readonly) NSNumber *rating;
+@property (nonatomic, copy, readonly) NSNumber *level;
 
--(instancetype) initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *)paramTitle subTitle:(NSString *)paramSubTitle rating:(NSNumber *)ratingNumber;
+-(instancetype) initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *)paramTitle subTitle:(NSString *)paramSubTitle userRank:(NSNumber *)level;
 
 @end

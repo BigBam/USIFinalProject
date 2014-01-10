@@ -10,20 +10,7 @@
 
 @implementation MyAnnotation
 
-/*
--(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    MKAnnotationView *results = nil;
-    if([annotation isKindOfClass:[MyAnnotation class]] == NO)
-    {
-        return results;
-    }
-    
-    if([mapView isEqual:self.map])
-}
-*/
-
--(instancetype) initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *)paramTitle subTitle:(NSString *)paramSubTitle rating:(NSNumber *)ratingNumber
+-(instancetype) initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *)paramTitle subTitle:(NSString *)paramSubTitle userRank:(NSNumber *)level
 {
     self = [super init];
     
@@ -32,7 +19,7 @@
         _coordinate = paramCoordinates;
         _title = paramTitle;
         _subtitle = paramSubTitle;
-        _rating = ratingNumber;
+        _level = level;
     }
     
     return self;

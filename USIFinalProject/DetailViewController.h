@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Settings.h"
+#import "MyAnnotation.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate, MKMapViewDelegate, UIPopoverControllerDelegate>
 
@@ -20,4 +21,6 @@
 
 - (IBAction)openSettings:(id)sender;
 
+-(void) clearAnnotations;
+-(void) redrawAnnotations;
 @end

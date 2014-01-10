@@ -11,6 +11,7 @@
 		869449FA187E89C000255CF4 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 869449F9187E89C000255CF4 /* Settings.m */; };
 		86A493A3187F132B00287D83 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A493A1187F132B00287D83 /* SettingsViewController.m */; };
 		86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A493A2187F132B00287D83 /* SettingsViewController.xib */; };
+		86A493AA187F4D2900287D83 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A493A9187F4D2900287D83 /* pin.png */; };
 		86B93360187DDE7500C28319 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B9335F187DDE7500C28319 /* Foundation.framework */; };
 		86B93362187DDE7500C28319 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93361187DDE7500C28319 /* CoreGraphics.framework */; };
 		86B93364187DDE7500C28319 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B93363187DDE7500C28319 /* UIKit.framework */; };
@@ -52,6 +53,7 @@
 		86A493A0187F132B00287D83 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		86A493A1187F132B00287D83 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		86A493A2187F132B00287D83 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		86A493A9187F4D2900287D83 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		86B9335C187DDE7500C28319 /* USIFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USIFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B9335F187DDE7500C28319 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86B93361187DDE7500C28319 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 		86B93368187DDE7500C28319 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86A493A9187F4D2900287D83 /* pin.png */,
 				86B93373187DDE7500C28319 /* Main_iPhone.storyboard */,
 				86B93376187DDE7500C28319 /* Main_iPad.storyboard */,
 				86B93369187DDE7500C28319 /* USIFinalProject-Info.plist */,
@@ -298,6 +301,7 @@
 				86B93378187DDE7500C28319 /* Main_iPad.storyboard in Resources */,
 				86B93383187DDE7500C28319 /* Images.xcassets in Resources */,
 				86B93375187DDE7500C28319 /* Main_iPhone.storyboard in Resources */,
+				86A493AA187F4D2900287D83 /* pin.png in Resources */,
 				86B9336C187DDE7500C28319 /* InfoPlist.strings in Resources */,
 				86A493A4187F132B00287D83 /* SettingsViewController.xib in Resources */,
 			);

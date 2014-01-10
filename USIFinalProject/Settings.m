@@ -23,8 +23,6 @@
         // Device ID is not set so we need to generate a unique one
         [prefs setObject:[self generateDeviceID] forKey:@"deviceID"];
         [prefs synchronize];
-        
-        // Save the deviceID to the web server
     }
     
     return [prefs stringForKey:@"deviceID"];
