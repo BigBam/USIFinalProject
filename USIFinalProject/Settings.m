@@ -43,4 +43,24 @@
     // Return the unique identifier
     return [jsonDict objectForKey:@"id"];
 }
+
+// Web service functions
+- (BOOL) checkAvailableUsername:(NSString *)username
+{
+    NSLog(@"%@", username);
+    
+    // Initialize
+    NSError *error;
+    NSData *data = [[NSData alloc] init];
+    
+    // Query webservice
+    data = [NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"http://scorekpr.com/json/checkUsername?username=%@", username]]];
+    
+    // Serialize results
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    bool results = [[jsonDict objectForKey:@"results"] boolValue];
+    
+    // Return result of username check
+    return results;
+}
 @end

@@ -13,5 +13,7 @@
 - (NSUserDefaults *) userDefaults;
 - (NSString *) deviceID;
 - (NSString *) generateDeviceID;
-// (NSDictionary *) saveUser;
+
+// Web service functions
+- (BOOL) checkAvailableUsername:(NSString *)username;
 @end

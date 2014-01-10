@@ -9,7 +9,9 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
-
+{
+    Settings *pref;
+}
 @end
 
 @implementation SettingsViewController
@@ -26,14 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // User name input
+    
+    // Initialize settings
+    pref = [[Settings alloc] init];
+    
+    // Delegate username input
     self.usernameTxt.delegate = self;
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-
-    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +43,28 @@
 }
 
 - (IBAction)saveSettings:(id)sender {
+    // Save username to database with the respective device id
     
+    // Save username to settings
+    
+    // Go back to root
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)editingChanged:(id)sender
+{
+    if([pref checkAvailableUsername:[NSString stringWithFormat:@"%@",self.usernameTxt.text]])
+    {
+        // Username request good
+        self.statusLabel.backgroundColor = [UIColor greenColor];
+        [self.saveButton setHidden:NO];
+        [self.saveButton setEnabled:YES];
+    }
+    else
+    {
+        // Username request bad
+       self.statusLabel.backgroundColor = [UIColor redColor];
+        [self.saveButton setHidden:YES];
+    }
 }
 @end

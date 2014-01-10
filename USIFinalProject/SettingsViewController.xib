@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
+                <outlet property="saveButton" destination="aQe-wG-ctU" id="k6a-CG-SWU"/>
                 <outlet property="statusLabel" destination="ePI-LZ-eyu" id="N4g-4S-HC6"/>
                 <outlet property="usernameTxt" destination="pNi-ik-VKC" id="RpS-9k-cMz"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -34,6 +35,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="EQg-bL-1g7"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-LZ-eyu">
                     <rect key="frame" x="0.0" y="296" width="320" height="13"/>
@@ -61,13 +65,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-wG-ctU">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-wG-ctU">
                     <rect key="frame" x="0.0" y="328" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.96524711277173914" green="0.96524711277173914" blue="0.96524711277173914" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.33946161684782605" green="0.33946161684782605" blue="0.33946161684782605" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="SAVE">
                         <color key="titleColor" red="0.96327275815217395" green="0.96327275815217395" blue="0.96327275815217395" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.75757897419999998" green="0.75757897419999998" blue="0.75757897419999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="saveSettings:" destination="-1" eventType="touchUpInside" id="QaD-Wh-ycU"/>

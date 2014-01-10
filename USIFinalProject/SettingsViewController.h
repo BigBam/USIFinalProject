@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTxt;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
-- (IBAction)saveSettings:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 
+
+- (IBAction)saveSettings:(id)sender;
+- (IBAction)editingChanged:(id)sender;
 @end
