@@ -150,18 +150,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        //self.detailViewController.detailItem = object;
-    }
+
+//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+  //  [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        //[[segue destinationViewController] setDetailItem:object];
+        //
+
+        
     }
 }
 
